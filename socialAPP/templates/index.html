@@ -1,0 +1,226 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Social EAR</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style2.css' %}">
+</head>
+<body>
+    <header class="header">
+
+        <div class="menu container">
+            <a href="../static/images/logo.png" class="logo"><img src="../static/images/logo.png" class="logo-img" alt=""></a>
+            <input type="checkbox" id="menu"/>
+            <label for="menu">
+                <img src="../static/images/menu.png" class="menu-icono" alt="">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    {% if request.user.is_authenticated %}
+                    <li><a href="search_posts/">Keywords</a></li>
+                    <li><a href="profile/">Profile</a></li>
+                    <li><a href="feed/">Posts</a></li>
+                    <li>
+                        <form action="/logout/" method="POST">
+                            {% csrf_token %}
+                            <button type="submit">Logout</button>
+                        </form>
+                    </li>
+                    {% else %}
+                    <li><a href="login/">Login</a></li>
+                    <li><a href="register/">Sign Up</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header-content container">
+
+            <h1>Welcome to
+                <br>
+                Social EAR
+            </h1>
+            <p>
+                SocialEar provides a specialized service for
+                companies that want to understand the opinions
+                of their employees on social networks.
+                Our software analyzes comments and reactions,
+                generating detailed reports on the work 
+                environment quickly and efficiently.
+            </p>
+            <a href="#" class="btn-1">Contact Us</a>
+        </div>
+    </header>
+
+    <section class="app">
+
+        <div class="app-content container">
+
+            <h2>Our priorities</h2>
+            <p class="txt-p">
+                -Read comments
+                <br>
+                -Accumulate number of reactions
+                <br>
+                -Statistical report delivery
+                <br>
+                -Pleasant report
+                <br>
+                -Relatively short reading time
+                <br>
+                -Reading ability
+            </p>
+
+            <div class="app-group">
+
+                <div class="app-1">
+                    <img src="../static/images/section2.jpeg" alt="">
+                    <h3>Mentions</h3>
+                    <p>
+                        Through certain keywords that the
+                        user enters into the search engine,
+                        they can see comments that are important 
+                        to them from various social networks 
+                        like Twitter, Facebook, and Instagram. 
+                        We aim for them to be able to view each
+                        of these and access them.
+                    </p>
+                </div>
+                <div class="app-1">
+                    <img src="../static/images/estadisticas.jpg" alt="">
+                    <h3>Statistics of mentions</h3>
+                    <p>
+                        You will be able to directly see the 
+                        following statistics for each mention: 
+                        Spoken frequency of the topic, temporal trends,
+                        and platform where the highest number of 
+                        mentions about the topic are seen.
+                    </p>
+                </div>
+                <div class="app-1">
+                    <img src="../static/images/section4.jpg" alt="">
+                    <h3>Detailed mention</h3>
+                    <p>
+                        In the mention or post that interests 
+                        you the most, you will be able to 
+                        access it to see the following:
+                        The social network where it was published, 
+                        date and time, all the content of it, 
+                        and finally, who published it.
+                    </p>
+                </div>
+                <div class="app-1">
+                    <img src="../static/images/section5.jpg" alt="">
+                    <h3>Actualized keywords</h3>
+                    <p>
+                        You will be able to save multiple 
+                        keywords that lead them to the most 
+                        important information from each of 
+                        the mentioned applications, thus enabling
+                        them to view the desired information.
+                    </p>
+                </div>
+            </div>
+            <a href="index/sign-up/" class="btn-1">¡Join us now!</a>
+        </div>
+    </section>
+
+    <main class="services">
+        <div class="services-content container">
+            <h2>App notifications</h2>
+            <div class="services-group">
+                <div class="services-1">
+                    <img src="../static/images/email.jpeg" alt="">
+                    <h3>Email</h3>
+                </div>
+                <div class="services-1">
+                    <img src="../static/images/whatsapp.jpg" alt="">
+                    <h3>Whatsapp</h3>
+                </div>
+                <div class="services-1">
+                    <img src="../static/images/message.png" alt="">
+                    <h3>Text message</h3>
+                </div>
+            </div>
+            <p>
+                You can choose in which application you want
+                to receive notifications to remind you of 
+                those mentions or posts that most interested you,
+                and see which new ones are similar.
+            </p>
+            <a href="index/sign-up/" class="btn-1">¡Let's begin!</a>
+        </div>
+    </main>
+
+    <section class="general">
+        <div class="general-1">
+            <h2>Transformative Vision</h2>
+            <p>
+                At SocialEar, our vision is to revolutionize 
+                the way companies understand and manage 
+                their work environment. We specialize in 
+                analyzing employee opinions on social media 
+                to provide valuable insights into organizational 
+                culture and climate.
+            </p>
+            <a href="index/sign-up" class="btn-1">¡Let's start!</a>
+        </div>
+        <div class="general-2"></div>
+    </section>
+
+    <section class="general">
+        <div class="general-3"></div>
+        <div class="general-1">
+            <h2>Commitment to Excellence</h2>
+            <p>
+                At SocialEar, we are committed to delivering 
+                high-quality solutions for our clients. 
+                From data collection to report generation, 
+                we strive to provide comprehensive service that 
+                meets the most demanding expectations. 
+                With advanced technology and expertise in 
+                data analysis, we deliver detailed reports to 
+                help companies make strategic decisions and improve 
+                their work environment.
+            </p>
+            <a href="index/sign-up" class="btn-1">¡Let's start!</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content container">
+            <div class="link">
+                <h3>Our contact</h3>
+                <ul>
+                    <li><a href="#">Email</a></li>
+                    <li><a href="#">Whatsapp</a></li>
+                    <li><a href="#">Phone number</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                    <li><a href="#">SEO Optimization</a></li>
+                    <li><a href="#">Graphic Design</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <h3>Additional Information</h3>
+                <ul>
+                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

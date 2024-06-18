@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --color1: #2e8ae7;
+    --color2: #fff;
+}
+
+.post img {
+    max-width: 400px; /* Ajusta el tamaño máximo de las imágenes */
+    height: auto; /* Mantén la proporción de aspecto */
+}
+
+/* Color del texto */
+body {
+    color: white; /* Cambia el color del texto a blanco */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background-image: linear-gradient(
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.7)
+    ),
+    url(../static/images/background1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+.container{
+    text-align: center;
+    padding-top: 60px;
+}
+
+h1{
+    color: aliceblue;
+    font-size: 50px;
+}
+
+.container-2{
+    padding-top: 50px;
+    color: aliceblue;
+}
+
+.button-1{
+    color: aliceblue;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 200px;
+    height: 40vh;
+    padding: 0 1.7rem;
+    color: var(--color2);
+    overflow: hidden;
+}
+
+.menu{
+    height: 88%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+
+.menu li{
+    padding: 1rem;
+    margin: 8px 0;
+    border-radius: 8px;
+}
+
+.menu li:hover{
+    background: #e0e0e058;
+}
+
+.menu a{
+    color: var(--color2);
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.menu a span{
+    overflow: hidden;
+}
+
+.menu a i{
+    font-size: 1.2rem;
+}
+
+.footer{
+    padding: 290px 0;
+    background-color: #000000;
+}
+
+.footer-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.link{
+    flex: 1 1 250px; /* Esto asegura que cada columna tenga un ancho mínimo y máximo */
+    margin-bottom: 30px;
+}
+
+.link h3{
+    font-size: 17px;
+    color: #F9FAFC;
+    margin-bottom: 8px;
+}
+
+.link ul{
+    list-style: none;
+    padding: 0;
+}
+
+.link ul li{
+    margin-bottom: 10px;
+}
+
+.link ul li a{
+    color: #F9FAFC;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 12px;
+}
+
+.link ul li a:hover{
+    color: #ffffff; /* Cambia el color del texto al pasar el mouse */
+}

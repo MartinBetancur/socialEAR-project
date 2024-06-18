@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Publicaciones</title>
+    <link rel="stylesheet" href="{% static 'style-search.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo"></div>
+        <ul class="menu">
+            <li class="active">
+                <a href="{% url 'index' %}">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'profile' %}">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'feed' %}">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'linkedin_post' %}">
+                    <i class="fas fa-image"></i>
+                    <span>LinkedIn Posts</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="container">
+            <h1>Search posts by KEYWORDS</h1>
+            <div class="container-2">
+                <form method="POST">
+                    {% csrf_token %}
+                    <label for="keyword">Keyword:</label>
+                    <input type="text" id="keyword" name="keyword" value="{{ request.POST.keyword }}">
+                    <button type="submit" class="button-1">Search</button>
+                </form>
+            </div>
+            <div class="posts-container">
+                {% for post in posts %}
+                    <div class="post">
+                        <br>
+                        <img src="{{ post.embeddedObject.imageUrl }}" alt="{{ post.embeddedObject.title }}">
+                        <h2>{{ post.embeddedObject.title }}</h2>
+                        <p>{{ post.text }}</p>
+                        <a href="{{ post.person.link }}">{{ post.person.name }}</a>
+                    </div>
+                {% empty %}
+                    <p>No posts found.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content container">
+            <div class="link">
+                <h3>Our contact</h3>
+                <ul>
+                    <li><a href="mailto:martinjavieli@gmail.com">Email</a></li>
+                    <li><a href="#">Whatsapp</a></li>
+                    <li><a href="tel:+573016864370">Phone number</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <h3>Services</h3>
+                <ul>
+                    <li><a>Web Design</a></li>
+                    <li><a>Digital Marketing</a></li>
+                    <li><a>SEO Optimization</a></li>
+                    <li><a>Graphic Design</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <h3>Additional Information</h3>
+                <ul>
+                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

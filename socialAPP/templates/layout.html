@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Social posts</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="{% static 'normalize.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'stylee.css' %}">
+</head>
+<body>
+    
+	<header class="main-head">
+		<nav class="main">
+			<h1 id="logo">Hola! {{ user.username }}</h1>
+			<ul>
+				{% if request.user.is_authenticated %}
+				<li><a href="{% url 'search_posts' %}">Keywords</a></li>
+				<li><a href="{% url 'index' %}">Index</a></li>
+				<li><a href="{% url 'profile' %}">Profile</a></li>
+				<li>
+					<form action="/logout/" method="POST">
+						{% csrf_token %}
+						<button type="submit">Logout</button>
+					</form>
+					</li>
+				{% else %}
+				<li><a href="{% url 'register' %}">Register</a></li>
+				<li><a href="{% url 'login' %}">Login</a></li>
+				{% endif %}		
+			</ul>
+		</nav>
+	</header>
+
+	{% if messages %}
+		{% for message in messages %}
+		<div class="notification {{ message.tags}}">
+			{{ message }}
+		</div>
+		{% endfor %}
+	{% endif %}
+
+	<!-------------------------------------
+					Navigation Bar 
+	-------------------------------------->
+	<div class="main">
+		
+		<nav class="second-nav">
+			<a class="feed" href="{% url 'feed' %}">Inicio</a>
+			{% if request.user.is_authenticated %}
+			<a class="profile" href="{% url 'profile' request.user.username %}">Mi Perfil</a>
+			<a class="linkedin_post" href="{% url 'linkedin_post' %}">LinkedIn Posts</a>
+			<a class="new" href="{% url 'post' %}">Crear nuevo post</a>
+			{% endif %}
+		</nav>
+
+
+
+		{% block content %}
+
+		{% endblock content %}
+
+
+	</div>
+
+</body>
+</html>

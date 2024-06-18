@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'style-profilee.css' %}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+    
+    <span class="main_bg">
+
+    </span>
+
+    <div class="container">
+
+        <header class="header">
+            <div class="brandLogo">
+                <figure><img src="../static/images/logo.png" alt="logo" width="40px" height="40px"></figure>
+                <span>SocialEAR</span>
+            </div>
+        </header>
+
+        <section class="userProfile card">
+            <div class="profile">
+                <figure><img src="../static/images/foto-perfil.png" alt="profile" width="250px" height="250px"></figure>
+            </div>
+        </section>
+
+        <section class="work_skills card">
+            <div class="work">
+                <h1 class="heading">Work</h1>
+                <div class="primary">
+                    <h1>User Job</h1>
+                    <span>Primary</span>
+                    <p>• "Job Address"</p>
+                </div>
+                <div class="secondary">
+                    <h1>User Job</h1>
+                    <span>Secondary</span>
+                    <p>• "Job Address"</p>
+                </div>
+            </div>
+
+            <div class="skills">
+                <h1 class="heading">Skills</h1>
+                <ul>
+                    <li style="--i:0">• DB</li>
+                    <li style="--i:1">• Web-Design</li>
+                    <li style="--i:2">• UI/UX</li>
+                    <li style="--i:3">• Video Editing</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="userDetails card">
+            <div class="userName">
+                <h1 class="name">Name and Last name</h1>
+                <div class="map">
+                    <i class="bi bi-geo-alt-fill ri"></i>
+                    <span>City, Country</span>
+                </div>
+                <p>User's job</p>
+            </div>
+            <div class="rank">
+                <h1 class="heading">Rankings</h1>
+                <span>8,6</span>
+                <div class="rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                </div>
+            </div>
+
+            <div class="btns">
+                <ul>
+                    <li class="sendMsg">
+                        <i class="bi bi-chat-left-dots-fill ri"></i>
+                        <a href="#">Send Message</a>
+                    </li>
+                    <li class="sendMsg active">
+                        <i class="bi bi-person-check ri"></i>
+                        <a href="#">Contacts</a>
+                    </li>
+                    <li class="sendMsg">
+                        <i class="bi bi-exclamation-triangle-fill ri"></i>
+                        <a href="#">Report User</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="timeline_about card">
+            <div class="tabs">
+                <ul>
+                    <li class="timeline">
+                        <i class="bi bi-clipboard2-data-fill"></i>
+                        <span>Timeline</span>
+                    </li>
+                    <li class="about active">
+                        <i class="bi bi-person-fill"></i>
+                        <span>About</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contact_info">
+                <h1 class="heading">Contact Information</h1>
+                <ul>
+                    <li class="phone">
+                        <h1 class="label">Phone:</h1>
+                        <span class="info">+** **********</span>
+                    </li>
+                    <li class="address">
+                        <h1 class="label">Address:</h1>
+                        <span class="info">---</span>
+                    </li>
+                    <li class="phone">
+                        <h1 class="label">E-mail:</h1>
+                        <span class="info">user@email.com</span>
+                    </li>
+                    <li class="phone">
+                        <h1 class="label">Site:</h1>
+                        <span class="info">User's github or any site</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="basic_info">
+                <h1 class="heading">Basic Information</h1>
+                <ul>
+                    <li class="birthday">
+                        <h1 class="label">Birthday:</h1>
+                        <span class="info">DD/MM/YY</span>
+                    </li>
+                    <li class="sex">
+                        <h1 class="label">Gender:</h1>
+                        <span class="info">Male or female</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>

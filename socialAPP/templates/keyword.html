@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialEAR | Dashboard</title>
+    <link rel="stylesheet" href="{% static 'style3.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo"></div>
+        <ul class="menu">
+            <li class="active">
+                <a href="#">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-wallet"></i>
+                    <span>Notifications</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-globe"></i>
+                    <span>Mentions</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-tags"></i>
+                    <span>Favorite keywords</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Statistics of mentions</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Detailed mentions</span>
+                </a>
+            </li>
+            <li class="logout">
+                <a href="#">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Log out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main--content">
+        <div class="header--wrapper">
+            <div class="header--title">
+                <span>Hi! @{{ user.username }}</span>
+                <h2>Keywords</h2>
+            </div>
+            <div class="user--info">
+                <div class="search--box">
+                  <i class="fas fa-search"></i>
+                  <input type="text" placeholder="Search">
+                </div>
+                <img src="../static/images/foto-perfil.png" alt="">
+            </div>
+        </div>
+
+        <div class="card--container">
+            <h3 class="main--title">TODAY'S COMMENTS @{{ user.username }}</h3>
+            <div class="card--wrapper">
+                <div class="payment--card light-red">
+                    <div class="card--header">
+                        <div class="amount">
+                            <span class="title">
+                                Most relevants
+                            </span>
+                            <span class="amount--value"><b>By keyword</b></span>
+                        </div>
+                        <i class="fas fa-tags icon"></i>
+                    </div>
+                    <span class="card-detail">"Comments and keywords will appear once we link the API's "</span>
+                </div>
+
+                <div class="payment--card light-purple">
+                    <div class="card--header">
+                        <div class="amount">
+                            <span class="title">
+                                Most relevants
+                            </span>
+                            <span class="amount--value"><b>By keyword</b></span>
+                        </div>
+                        <i class="fas fa-tags icon dark-purple"></i>
+                    </div>
+                    <span class="card-detail">"Comments and keywords will appear once we link the API's "</span>
+                </div>
+
+                <div class="payment--card light-green">
+                    <div class="card--header">
+                        <div class="amount">
+                            <span class="title">
+                                Most relevants
+                            </span>
+                            <span class="amount--value"><b>By keyword</b></span>
+                        </div>
+                        <i class="fas fa-tags icon dark-green"></i>
+                    </div>
+                    <span class="card-detail">"Comments and keywords will appear once we link the API's "</span>
+                </div>
+
+                <div class="payment--card light-blue">
+                    <div class="card--header">
+                        <div class="amount">
+                            <span class="title">
+                                Most relevants
+                            </span>
+                            <span class="amount--value"><b>By keyword</b></span>
+                        </div>
+                        <i class="fas fa-tags icon dark-blue"></i>
+                    </div>
+                    <span class="card-detail">"Comments and keywords will appear once we link the API's"</span>
+                </div>
+            </div>
+        </div>
+        <div class="tabular--wrapper">
+            <h3 class="main--title">Rest of comments and trends for each Keyword</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date of the post</th>
+                            <th>Type of post</th>
+                            <th>Little description</th>
+                            <th>User who made the post</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>DD/MM/YY</td>
+                            <td>Trend or comment</td>
+                            <td>"This info will appear once we link the API's"</td>
+                            <td>User from any social app</td>
+                            <td><button>See comment</button></td>
+                        </tr>
+                        <tr>
+                            <td>DD/MM/YY</td>
+                            <td>Trend or comment</td>
+                            <td>"This info will appear once we link the API's"</td>
+                            <td>User from any social app</td>
+                            <td><button>See comment</button></td>
+                        </tr>
+                        <tr>
+                            <td>DD/MM/YY</td>
+                            <td>Trend or comment</td>
+                            <td>"This info will appear once we link the API's"</td>
+                            <td>User from any social app</td>
+                            <td><button>See comment</button></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="7">Most relevant comments: X "Number should change with every keyword"</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

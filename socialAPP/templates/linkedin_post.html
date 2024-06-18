@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+  {% if error %}
+  <h3>No se pudo obtener los posts de LinkedIn</h3>
+  <div class="linkedin-post-content">
+	<p>{{result.error.message}} ({{status_code}})</p>
+  </div>
+  {% else %}
+  {% for post in result.posts %}
+  <h3>LinkedIn Posts:</h3>
+  <div class="linkedin-post">
+	<div class="linkedin-post-author">
+	  <a href="https://www.linkedin.com/business/talent/blog/product-tips/linkedin-profile-summaries-that-we-love-and-how-to-boost-your-own">
+		<img width="50px" height="50px" src="{{post.embeddedObject.imageUrl}}" alt="Author's profile picture">
+	  </a>
+	  <span class="linkedin-post-author-name">{{post.embeddedObject.source}}</span>
+	</div>
+	<div class="linkedin-post-content">
+	  <p>{{post.embeddedObject.title}}.</p>
+	</div>
+	<div class="linkedin-post-actions">
+	  <a href="#" class="linkedin-post-like-button">Like</a>
+	  <a href="#" class="linkedin-post-comment-button">Comment</a>
+	  <a href="#" class="linkedin-post-share-button">Share</a>
+	</div>
+  </div>
+  {% endfor %}
+  {% endif %}
+
+  {% endblock content %}
